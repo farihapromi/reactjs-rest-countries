@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Country = () => {
+const Country = ({ country }) => {
   return (
-    <div>
-      
+    <div className='country'>
+      <h3>{country.name.common}</h3>
     </div>
-  )
-}
+  );
+};
 
-export default Country
+export default Country;

@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Country from './Country'
 
 const Countries = () => {
     const [countries,setCountries]=useState([])
     useEffect(()=>{
-        fetch('https://restfulcountries.com/api/v1/countries')
-        .then(res=>res.json())
+         fetch('https://restcountries.com/v3.1/all')
+         .then(res=>res.json())
         .then(data=>setCountries(data))
     },[])
   return (
     <div>
+     
         {
-            countries.map(country=><Country></Country>)
+      countries.map((country, index) => (
+         <Country key={index} country={country} />
+              ))
         }
       
     </div>
