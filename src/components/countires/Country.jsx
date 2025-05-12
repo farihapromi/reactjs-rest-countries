@@ -11,7 +11,9 @@ const Country = ({ country }) => {
       <p>Population : {population}</p>
       <p>Area: {area}</p>
       <p><small>Code :{cca3}</small></p>
-      <button onClick={()=>setVisited(!visited)}>{visited ? 'Visited':"Going"}</button>
+      <button>Mark Visited</button>
+      <br />
+      <button onClick={()=>setVisited(!visited)} className='visited-btn'>{visited ? 'Visited':"Going"}</button>
       {
         visited ? ' I have visited this country':'I wnat to go there'
       }

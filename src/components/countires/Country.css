@@ -8,3 +8,7 @@
 .visited{
     background-color: aquamarine;
 }
+.visited-btn{
+    background-color: black;
+    color:white
+}
