@@ -6,6 +6,8 @@ const Countries = () => {
     const [countries,setCountries]=useState([])
     //state for viisted countries
     const[visitedCountries,setVisitedCountries]=useState([])
+    //viistesd countries flag
+    const [visitedFlag,setVisitedFlag]=useState([])
 
     const handleVisitedCountry=(country)=>{
       // setVisitedCountries.push(country) //this is will not work as useState array is immutable,
@@ -13,6 +15,10 @@ const Countries = () => {
       const newVisitedCountries=[...visitedCountries,country];
       setVisitedCountries(newVisitedCountries)
 
+    }
+    const handleVisitedFlag=flag=>{
+    const newVisitedFlags=[...visitedFlag,flag]
+    setVisitedFlag(newVisitedFlags)
     }
     useEffect(()=>{
          fetch('https://restcountries.com/v3.1/all')
@@ -30,6 +36,13 @@ const Countries = () => {
         }
       </ul>
       </div>
+      {/* for flag */}
+      <div className='flag-container'>
+        {
+          visitedFlag.map(flag=><img src={flag}></img>)
+        }
+
+      </div>
     <div className='country-container'>
      
         {
@@ -38,6 +51,7 @@ const Countries = () => {
          key={country.cca3} 
          country={country} 
          handleVisitedCountry={handleVisitedCountry} // sending function through props
+         handleVisitedFlag={handleVisitedFlag}
          />
               ))
         }

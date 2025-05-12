@@ -8,3 +8,16 @@
   margin: 0;
   list-style-position: inside;
 }
+.flag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.flag-container img {
+  height: 30px; /* or 20px if you prefer */
+  width: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
