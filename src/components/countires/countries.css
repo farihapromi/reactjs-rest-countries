@@ -3,3 +3,8 @@
     grid-template-columns: repeat(3,1fr);
     gap:10px;
 }
+.visited-list {
+  padding-left: 20px;
+  margin: 0;
+  list-style-position: inside;
+}

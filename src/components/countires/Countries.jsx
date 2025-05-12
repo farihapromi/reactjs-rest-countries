@@ -7,7 +7,11 @@ const Countries = () => {
     //state for viisted countries
     const[visitedCountries,setVisitedCountries]=useState([])
 
-    const handleVisitedCountry=()=>{
+    const handleVisitedCountry=(country)=>{
+      // setVisitedCountries.push(country) //this is will not work as useState array is immutable,
+      //first have to mkae new array
+      const newVisitedCountries=[...visitedCountries,country];
+      setVisitedCountries(newVisitedCountries)
 
     }
     useEffect(()=>{
@@ -19,7 +23,12 @@ const Countries = () => {
     <div>
       {/* Show list of visited countriesd */}
       <div>
-      <h5>Visited countires:</h5>
+      <h5>Visited countires: {visitedCountries.length}</h5>
+      <ul className="visited-list">
+        {
+          visitedCountries.map(country=><li key={country.cca3}>{country.name.common}</li>)
+        }
+      </ul>
       </div>
     <div className='country-container'>
      
