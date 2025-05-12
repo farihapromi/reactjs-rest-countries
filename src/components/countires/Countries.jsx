@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import Country from './Country'
+import './countries.css'
 
 const Countries = () => {
     const [countries,setCountries]=useState([])
@@ -9,11 +10,11 @@ const Countries = () => {
         .then(data=>setCountries(data))
     },[])
   return (
-    <div>
+    <div className='country-container'>
      
         {
-      countries.map((country, index) => (
-         <Country key={index} country={country} />
+      countries.map((country) => (
+         <Country key={country.cca3} country={country} />
               ))
         }
       
